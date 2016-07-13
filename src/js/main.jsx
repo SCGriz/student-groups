@@ -65,11 +65,11 @@ if(this.state.data) {
     return (
       <Container>
         <VBox>
+          <Panel>
           <BannerHeader theme="alt" icon="book" key="header" flex={0}>
             Student Groups
           </BannerHeader>
-          <Panel>
-          <div style={{marginBottom:"1em"}}>
+          <div style={{margin:"1em"}}>
             <Input icon="search" name="name" fluid size="large?">
             <input type="text"
               placeholder="Search..."
@@ -82,7 +82,7 @@ if(this.state.data) {
             <Listview items={groups} itemFactory={(group)=>{
               return(
                     <Item>
-                      <h2><a href="campusm://openURL?type=external&url=subject.url/">{group.name}</a></h2>
+                      <h2><a href={group.url} style={{paddingTop:"1em", paddingBottom:"1em"}}>{group.name}</a></h2>
 
                       <h3>About:</h3>
                       <p>{group.category}</p>
@@ -93,7 +93,7 @@ if(this.state.data) {
                           <a href={group.url}>University Page</a>
                           <a href={group.facebook_url}>{group.facebook}</a>
                           <a href={"http://twitter.com/"+ group.twitter}>{group.twitter}</a>
-                      <h3>ASUM:</h3>
+                      <h3>Contact:</h3>
                           <p>{group.advisor}</p>
                           <p>{group.contact}</p>
 
